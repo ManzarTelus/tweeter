@@ -23,7 +23,9 @@ body {
 
   font-family: 'Bungee', cursive;
   font-family: 'Source Sans Pro', sans-serif;
- 
+  
+    border: 5px solid red;
+   
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

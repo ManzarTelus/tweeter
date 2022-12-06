@@ -11,7 +11,9 @@ nav {
   background-color: #4056A1;
   height: 120px;
   font-family:Bungee, sans-serif;
-  
+  border-top:    5px solid red;
+  border-right:  5px solid red; 
+  border-left:   5px solid red;
 }
 .write-tweet{
   font-family: Sans-Serif;
