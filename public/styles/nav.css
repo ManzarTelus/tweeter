@@ -1,0 +1,21 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+    margin: 0;
+  padding: 1.5em;
+  color: #FFFFFF;
+  background-color: #4056A1;
+  height: 120px;
+  font-family:Bungee, sans-serif;
+}
+.write-tweet{
+  font-family: Sans-Serif;
+  font-size: 1em
+}
+.fa-angle-double-down{
+  margin-left: 90px;
+}
