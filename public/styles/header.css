@@ -17,5 +17,6 @@ header {
   }
   header h2 {
     border: 5px solid red;
+    margin: 0px;
   }
 

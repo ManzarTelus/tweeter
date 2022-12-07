@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
-    p {
-      border: 5px solid red;
-    }
-  </style>
+
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
+    
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap" rel="stylesheet"> 
 
     
-
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -28,6 +24,7 @@
     <script type="text/javascript" src="/scripts/client.js"></script>
   </head>
 
+  
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
@@ -51,7 +48,22 @@
       </div>
   </header>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    
+  <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+            <form>
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <section id="tweets-container"></section>
+    </main>
+    <p style="height: 500px;"></p>
+    <div id="scrollUp"></div>
   </body>
 </html>
