@@ -1,9 +1,10 @@
 .tweet-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   background-color: hwb(37 93% 4%);
   font-family:Bungee, sans-serif;
+  color: black;
   font-size: 1em;
   margin: 3%;
 }
@@ -50,7 +51,7 @@ footer {
   flex-direction: row;
   justify-content: space-evenly;
   font-family: 'Source Sans Pro', sans-serif;
-}
+  }
 
 .newton {
   padding: 20px;
