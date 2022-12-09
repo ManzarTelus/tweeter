@@ -18,6 +18,13 @@ button {
   border: none;
 }
 
+.tweet-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom: 5px, solid, black;
+  word-wrap: break-word;
+}
+
 textarea {
   
   font-family: sans-serif;
@@ -33,4 +40,12 @@ textarea {
   margin-bottom: 20px;
   resize: none;
 }
+
+.tweet-text {
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom: 5px, solid, black;
+  word-wrap: break-word;
+}
+
 

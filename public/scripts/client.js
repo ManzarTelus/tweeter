@@ -5,19 +5,20 @@
 
 $(document).ready(function() {
 
-  const createTweetElement = function (tweet) {
+  const createTweetElement = function(tweet) {
     const $tweet = $(`
     <article class="tweet">
       <header class="tweet-header">
         <div class="name-avatar">
           <div>
-            <img src="${tweet.user.avatars}"></img>
-            <p>${tweet.user.name}</p>
+            <img name=avatar src=${tweet.user.avatars}>
+            <div class="user" name="name">${tweet.user.name}</div>
           </div>
-          <p class="last-name">${tweet.user.handle}</p>
+          <p class="handle" name="handle">${tweet.user.handle}</p>
         </div>
       </header>
-      <p class="content">${tweet.content.text}</p>
+      <p class="tweet-text" name="tweet-text">${tweet.content.text}</content>
+      </p>
       <footer class="tweet-footer">
         <div>
           <p>${timeago.format(tweet.created_at)}</p>
@@ -29,44 +30,47 @@ $(document).ready(function() {
       </div>
       </footer>
     </article>`);
-  return $tweet;
+    return $tweet;
   };
   
   const renderTweets = function(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and prepend it to the tweets container
-    $('.tweet-container').empty();
+    $('.tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('.tweet-container').prepend($tweet);
+      $('.tweets-container').prepend($tweet);
     }
   };
   
-  const fetchTweetsWithAjax = function() {
+  const loadTweets = function() {
     $.ajax({
       url: '/tweets',
       method: 'get',
-    }).then(renderTweets)
+    }).then(renderTweets);
   };
   
-  $('#form').submit(function(event){
+  $('#form').submit(function(event) {
+    event.preventDefault();
     const tweetData =  $(this).serialize();
-  if (tweetData.length === 0) {
-    event.preventDefault();
-    alert ("Please write TWEET before submission.");
-  } else if(tweetData.length > 140) {
-    event.preventDefault();
-    alert ("The text entered exceeds the maximum length!");
-  } else {
-    event.preventDefault(); //prevent default action 
-  $("#form")[0].reset();
+    const input = $("<div>").text($("#tweet-text").val());
+    if (input.length === 0) {
+      alert("Please write TWEET before submission.");
+      return;
+    }
+    if (input.length > 140) {
+      alert("The text entered exceeds the maximum length!");
+      return;
+    }
+    $("#form")[0].reset();
     $.ajax({
       url : '/tweets',
       method: 'post',
       tweetData
-    }).then(fetchTweetsWithAjax);
-  }
-  })
-  })
+    }).then(loadTweets);
+  });
+  loadTweets();
+});
+  
   
