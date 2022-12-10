@@ -15,7 +15,6 @@ $(document).ready(function() {
             <div class="client-name" name="name">${tweet.user.name}</div>
           </div>
           <div class="handle" name="handle">${tweet.user.handle}</div>
-        </div>
       </header>
       <div class="tweet-text" name="tweettext">${tweet.content.text}</div> 
       <footer>
@@ -47,13 +46,13 @@ $(document).ready(function() {
     const data = $(this).serialize();
     if (!text) {
       $('#error-print').empty();
-      const $errorMessage ="Please write TWEET before submission.";
+      const $errorMessage ="⚠  Please write TWEET before submission. ⚠ ";
       $('#error-print').text($errorMessage).slideDown();
       $('#error-print').css('border-style', 'dotted');
       return;
     }
-    else if (text2.length > 140) {
-      const $errorMessage = "he text entered exceeds the maximum length!";
+    else if (text.length > 140) {
+      const $errorMessage = "⚠ Too long. Plz rspct our arbitrary limit of 140 chars. #kthxbye. ⚠";
       $('#error-print').text($errorMessage).slideDown();
       $('#error-print').css('border-style', 'dotted');
       return;
