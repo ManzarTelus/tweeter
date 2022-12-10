@@ -11,12 +11,3 @@ header {
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   background-color: DarkGoldenrod;
   }
-
-  header img{
-    border: 5px solid red;
-  }
-  header h2 {
-    border: 5px solid red;
-    margin: 0px;
-  }
-

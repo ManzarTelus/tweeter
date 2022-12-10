@@ -14,26 +14,8 @@ article:hover {
   text-shadow: 0.2px 0.2px rgb(79, 79, 136);
 }
 
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 20px;
-  margin: 3%;
-  margin-top: 0; 
-  font-size: 0.75em;
-  border-top: 5px black solid;
-}
 
-.name-avatar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  font-family: 'Source Sans Pro', sans-serif;
-  }
-
-.user {
+.tweets {
   padding: 20px;
 }
 .image-class {

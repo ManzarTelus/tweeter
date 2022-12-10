@@ -4,73 +4,75 @@
   */
 
 $(document).ready(function() {
-
+  //Create the tweet HTML
   const createTweetElement = function(tweet) {
+    tweet.content.text = $("<div>").text(tweet.content.text).html();
     const $tweet = $(`
     <article class="tweet">
       <header class="tweet-header">
-        <div class="name-avatar">
-          <div>
-            <img name=avatar src=${tweet.user.avatars}>
-            <div class="user" name="name">${tweet.user.name}</div>
+        <div class="name-avatar">         
+            <img name=avatarPic src=${tweet.user.avatars}>
+            <div class="client-name" name="name">${tweet.user.name}</div>
           </div>
-          <p class="handle" name="handle">${tweet.user.handle}</p>
+          <div class="handle" name="handle">${tweet.user.handle}</div>
         </div>
       </header>
-      <p class="tweet-text" name="tweet-text">${tweet.content.text}</content>
-      </p>
-      <footer class="tweet-footer">
-        <div>
-          <p>${timeago.format(tweet.created_at)}</p>
-        </div>
+      <div class="tweet-text" name="tweettext">${tweet.content.text}</div> 
+      <footer>
+          <div>${timeago.format(tweet.created_at)}</div>        
         <div class="image-class">
         <i class="fa-solid fa-flag"></i>
         <i class="fas fa-retweet"></i>
         <i class="fa-solid fa-heart"></i>
       </div>
       </footer>
-    </article>`);
+    </article>)
+    `);
     return $tweet;
   };
   
+  //loops through the tweets and dynamically render each
   const renderTweets = function(tweets) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and prepend it to the tweets container
     $('.tweets-container').empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
       $('.tweets-container').prepend($tweet);
     }
   };
-  
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'get',
-    }).then(renderTweets);
-  };
-  
+
   $('#form').submit(function(event) {
     event.preventDefault();
-    const tweetData =  $(this).serialize();
-    const input = $("<div>").text($("#tweet-text").val());
-    if (input.length === 0) {
-      alert("Please write TWEET before submission.");
+    $('#error-print').slideUp(400).empty();
+    const text = $("#tweet-text").val();
+    const data = $(this).serialize();
+    if (!text) {
+      $('#error-print').empty();
+      const $errorMessage ="Please write TWEET before submission.";
+      $('#error-print').text($errorMessage).slideDown();
+      $('#error-print').css('border-style', 'dotted');
       return;
     }
-    if (input.length > 140) {
-      alert("The text entered exceeds the maximum length!");
+    else if (text2.length > 140) {
+      const $errorMessage = "he text entered exceeds the maximum length!";
+      $('#error-print').text($errorMessage).slideDown();
+      $('#error-print').css('border-style', 'dotted');
       return;
     }
     $("#form")[0].reset();
     $.ajax({
       url : '/tweets',
       method: 'post',
-      tweetData
+      data
     }).then(loadTweets);
   });
+
+//Get tweets from the database and called the render function
+const loadTweets = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'get',
+  }).then(renderTweets);
+};
   loadTweets();
 });
-  
-  
+
