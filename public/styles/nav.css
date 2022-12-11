@@ -58,3 +58,34 @@ button.right-nav:hover {
   padding-top: 10px;
   pointer-events: none;
 }
+
+@keyframes bouncingchevron {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+nav i {
+  display: inline-block;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@media (max-width: 768px) {
+  nav {
+    background-color: #ee5253;
+    background-image: url("/images/brushed-alum.png");
+  }
+  nav .new-tweet-chevron {
+    color: #4056a1;
+  }
+  nav .chevron {
+    color: #fff;
+  }
+}

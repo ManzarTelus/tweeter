@@ -14,10 +14,11 @@ $(document).ready(function() {
             <img name=avatar src=${tweet.user.avatars}>
             <div class="client" name="name">${tweet.user.name}</div>
           </div>
+          
           <div class="handle" name="handle">${tweet.user.handle}</div>
       </header>
       <div class="tweet-text" name="tweetText">${tweet.content.text}</div> 
-      <footer>
+      <footer>      
         <div>${timeago.format(tweet.created_at)}</div>        
         <div class="image-class">
         <i class="fa-solid fa-flag"></i>
@@ -81,4 +82,3 @@ $('.right-nav').click(function(event) {
 });
   loadTweets();
 });
-

@@ -25,6 +25,15 @@ article:hover {
   padding-inline: 5px;
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;  
+  border-top: 5px black solid;
+  padding-top: 5px;
+  margin: 2%;
+}
+
 
 .fa-solid:hover {
   color:rgb(187, 141, 22);

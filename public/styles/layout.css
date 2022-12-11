@@ -37,14 +37,21 @@ main {
  .body-container {
   display: flex;
   flex-direction: row;
-  margin-top: 150px;
+  margin-top: 70px;
+  margin-left: 50px;
 }
 
 .body-container .headerClass {
   flex-grow: 1;
 }
-
 .body-container .container {
   flex-grow: 2;
+}
+
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+    width: 100%;
+  }
 }
  
