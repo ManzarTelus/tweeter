@@ -9,7 +9,7 @@ This repository is the starter code for the project: Students will fork and clon
 ### Screenshot of Empty Tweet.
 !["Screenshot of empty Tweet"](https://github.com/ManzarTelus/tweeter/blob/master/docs/empty_tweet.PNG)
 
-### Screenshot of nvalid tweet - more than 140 characters.
+### Screenshot of invalid tweet - more than 140 characters.
 !["Screenshot of too long Tweet"](https://github.com/ManzarTelus/tweeter/blob/master/docs/long-tweet.PNG)
 
 ### Screenshot of App Main Page (Interface).
