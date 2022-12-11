@@ -16,7 +16,7 @@ $(document).ready(function() {
           </div>
           <div class="handle" name="handle">${tweet.user.handle}</div>
       </header>
-      <div class="tweet-text" name="tweettext">${tweet.content.text}</div> 
+      <div class="tweet-text" name="tweetText">${tweet.content.text}</div> 
       <footer>
           <div>${timeago.format(tweet.created_at)}</div>        
         <div class="image-class">
@@ -48,22 +48,25 @@ $(document).ready(function() {
       $('#error-print').empty();
       const $errorMessage ="⚠  Please write TWEET before submission. ⚠ ";
       $('#error-print').text($errorMessage).slideDown();
-      $('#error-print').css('border-style', 'dotted');
+      $('#error-print').css('border-style', 'solid' );
+      $('#error-print').css('color', 'red' );
       return;
     }
     else if (text.length > 140) {
       const $errorMessage = "⚠ Too long. Plz rspct our arbitrary limit of 140 chars. #kthxbye. ⚠";
       $('#error-print').text($errorMessage).slideDown();
-      $('#error-print').css('border-style', 'dotted');
+      $('#error-print').css('border-style', 'solid');
+      $('#error-print').css('color', 'red' );
       return;
     }
     $("#form")[0].reset();
-    $.ajax({
-      url : '/tweets',
+    $.ajax({    
       method: 'post',
+      url : '/tweets',
       data
     }).then(loadTweets);
-  });
+    $('.maxCounter').text('140');
+  });  
 
 //Get tweets from the database and called the render function
 const loadTweets = function() {
@@ -72,6 +75,10 @@ const loadTweets = function() {
     method: 'get',
   }).then(renderTweets);
 };
+$('.right-nav').click(function(event) {
+  event.preventDefault();
+  $('#tweet-text').focus();
+});
   loadTweets();
 });
 

@@ -1,4 +1,4 @@
-header {
+.headerClass {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -10,4 +10,7 @@ header {
   color: #fff; 
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   background-color: DarkGoldenrod;
-  }
+  border: 5pc;
+  border-color: #4056A1;
+  border-radius: 5px
+}

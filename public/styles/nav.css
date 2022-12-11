@@ -1,5 +1,6 @@
 nav {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   position: fixed;
   top: 0;
@@ -18,4 +19,42 @@ nav {
 }
 .fa-angle-double-down{
   margin-left: 17px;
+}
+.right-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Source Sans Pro, Sans-Serif;
+  font-size: 0.75em;
+  background: transparent;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+}
+
+.navbar button {
+  font-size: 0.75em;
+  color: white;
+  background-color: #4056A1;
+  cursor: pointer;
+  height: 77px;
+  width: 247px;
+  border-radius: 20px; 
+}
+
+button.right-nav:hover {
+
+  box-shadow: 2px 5px #888888;
+  text-shadow: 0.2px 0.2px rgb(79, 79, 136);
+}
+
+.chevron {
+  display: flex;
+  justify-content: center;
+  color: crimson;
+  font-size: 1em;
+  font-weight: 600;
+  padding-top: 10px;
+  pointer-events: none;
 }
