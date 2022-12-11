@@ -13,8 +13,7 @@ $(document).ready(function() {
         <div class="name-avatar">         
             <img name=avatar src=${tweet.user.avatars}>
             <div class="client" name="name">${tweet.user.name}</div>
-          </div>
-          
+          </div>          
           <div class="handle" name="handle">${tweet.user.handle}</div>
       </header>
       <div class="tweet-text" name="tweetText">${tweet.content.text}</div> 
