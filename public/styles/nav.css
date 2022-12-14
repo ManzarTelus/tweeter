@@ -1,12 +1,12 @@
 nav {
   display: flex;
   flex-direction: row;
+  margin-bottom: 100px;
   justify-content: space-between;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  margin: 0;
   padding: 1.5em;
   color: #FFFFFF;
   background-color: #4056A1;
@@ -17,10 +17,11 @@ nav {
   font-family: Sans-Serif;
   font-size: 1em
 }
+
 .fa-angle-double-down{
   margin-left: 17px;
 }
-.right-nav {
+.write-tweet {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -43,7 +44,7 @@ nav {
   border-radius: 20px; 
 }
 
-button.right-nav:hover {
+button.write-tweet:hover {
 
   box-shadow: 2px 5px #888888;
   text-shadow: 0.2px 0.2px rgb(79, 79, 136);
@@ -59,33 +60,8 @@ button.right-nav:hover {
   pointer-events: none;
 }
 
-@keyframes bouncingchevron {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-nav i {
-  display: inline-block;
-  animation-name: example;
-  animation-duration: 2s;
-  animation-iteration-count: infinite;
-}
-
-@media (max-width: 768px) {
-  nav {
-    background-color: #ee5253;
-    background-image: url("/images/brushed-alum.png");
-  }
-  nav .new-tweet-chevron {
-    color: #4056a1;
-  }
-  nav .chevron {
-    color: #fff;
+@media only screen and (max-width: 768px) {
+  .navbar button {
+    border: none;
   }
 }

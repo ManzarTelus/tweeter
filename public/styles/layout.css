@@ -32,27 +32,90 @@ main {
   margin-inline-end: 5%;
    margin-top: 120px;
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  .body-container {
   display: flex;
   flex-direction: row;
+  
   margin-top: 70px;
   margin-left: 50px;
 }
-
 .body-container .headerClass {
   flex-grow: 1;
+  
 }
+
 .body-container .container {
   flex-grow: 2;
 }
+/*Responsive Design */
 
-@media (max-width: 768px) {
-  .app {
+/* Responsive Design for cellphones*/
+@media only screen and (max-width: 768px) {
+  .body-container {    
     flex-direction: column;
-    width: 100%;
+    margin-top: unset;
+  }
+  .body-container .headerClass {
+    flex-grow: 1;
+    background: #4056A1;
+    margin-top: 120;
+    border-radius: 0;
+  }
+  .body-container .container {
+    flex-grow: 1;
   }
 }
- 
+
+/* Responsive Design for Tablets*/
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .body-container {
+    flex-direction: row;
+    margin-top: unset;
+       padding: 0 20px;
+    gap: 20px;
+  }
+  .body-container .headerClass {
+    flex-grow: 1;
+    width: 33%;    
+    margin-left: 0;
+  }
+  .body-container .container {
+    flex-grow: 1;
+    word-wrap: break-word;
+    width: 66%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* Responsive Design for  For Desktop */
+@media only screen and (min-width: 1025px) {
+  .body-container {
+    flex-direction: row;
+    margin: 0;
+    margin-top: unset;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  .body-container .headerClass {
+    flex-grow: 1;
+    justify-content: center;
+    width: 33%;
+    margin-left: 0;
+  }
+  .body-container .container {
+    flex-grow: 1;
+    box-sizing: content-box;
+    word-wrap: break-word;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .container {
+    word-wrap: break-word;
+    width: 66%;
+  }
+}
